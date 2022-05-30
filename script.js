@@ -2,6 +2,9 @@ const btn = document.getElementById("more");
 const display = document.getElementById("amt-display");
 const vbuk = document.getElementById("vbuk-code")
 const amtAdd = document.getElementById("amt-add");
+const codeBtn = document.getElementById("code");
+const vbukCode = document.getElementById("vbuk-code");
+const codes = []
 let amtToAdd = 1;
 let score = 0;
 
@@ -20,4 +23,8 @@ amtAdd.addEventListener('keydown', function (e) {
 		default:
 			return;
 	}
+});
+
+codeBtn.addEventListener("click", function() {
+	vbukCode.innerText = "Your code is: " + codes[Math.floor(Math.random() * codes.length)];
 });
