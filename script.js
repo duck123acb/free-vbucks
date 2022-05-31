@@ -1,4 +1,5 @@
 const btn = document.getElementById("more");
+const codebtn = document.getElementById("code");
 const display = document.getElementById("amt-display");
 const vbuk = document.getElementById("vbuk-code")
 const amtAdd = document.getElementById("amt-add");
@@ -25,7 +26,12 @@ function getCode(){
 
 btn.addEventListener("click", function() {
 	score+=amtToAdd;
+	display.innerText = "VBUCKS amt: " + score;
+});
+
+btn.addEventListener("click", function(){
 	getCode();
+	score++;
 	display.innerText = "VBUCKS amt: " + score;
 	vbuk.innerText  = "Your code is: " + code;
 });
