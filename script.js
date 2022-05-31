@@ -9,21 +9,25 @@ let code = "";
 let currentChar = 0;
 
 
-for(let i = 0; i < 18; i++){
-	if (i == 5 | i == 10 |i == 15){
-		code += "-";
-	}
-	
-	else{
-		currentChar = Math.floor(Math.random() * chars.length);
-		code += chars[currentChar]
+function getCode(){
+	code = "";
+	for(let i = 0; i < 19; i++){
+		if (i == 4 | i == 9 |i == 14){
+			code += "-";
+		}
+		
+		else{
+			currentChar = Math.floor(Math.random() * chars.length);
+			code += chars[currentChar]
+		}
 	}
 }
 
 btn.addEventListener("click", function() {
 	score+=amtToAdd;
+	getCode();
 	display.innerText = "VBUCKS amt: " + score;
-	vbuk.innerText  = "Your code is:" + code;
+	vbuk.innerText  = "Your code is: " + code;
 });
 
 amtAdd.addEventListener('keydown', function (e) {
