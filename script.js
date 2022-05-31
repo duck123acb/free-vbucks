@@ -9,9 +9,15 @@ let code = "";
 let currentChar = 0;
 
 
-for(let i = 0; i < 16; i++){
-	currentChar = Math.floor(Math.random() * chars.length);
-	code += chars[currentChar]
+for(let i = 0; i < 18; i++){
+	if (i == 5 | i == 10 |i == 15){
+		code += " ";
+	}
+	
+	else{
+		currentChar = Math.floor(Math.random() * chars.length);
+		code += chars[currentChar]
+	}
 }
 
 btn.addEventListener("click", function() {
